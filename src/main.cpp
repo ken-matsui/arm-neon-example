@@ -22,14 +22,14 @@ void assert_and_print(const T& b) {
 // (Uint8, 16)
 void uint8x16_test() {
   std::cout << __func__ << std::endl;
-  constexpr std::size_t kN = 16;
+  constexpr std::size_t NUM_LANES = 16;
 
-  uint8_t a[kN] = {};
+  uint8_t a[NUM_LANES] = {};
   init(a);
 
   uint8x16_t va = vld1q_u8(a);
 
-  uint8_t b[kN] = {};
+  uint8_t b[NUM_LANES] = {};
   vst1q_u8(b, va);
 
   assert_and_print(b);
@@ -38,14 +38,14 @@ void uint8x16_test() {
 // (Uint8, 32)
 void uint8x16x2_test() {
   std::cout << __func__ << std::endl;
-  constexpr std::size_t kN = 32;
+  constexpr std::size_t NUM_LANES = 32;
 
-  uint8_t a[kN] = {};
+  uint8_t a[NUM_LANES] = {};
   init(a);
 
   uint8x16x2_t va = vld2q_u8(a);
 
-  uint8_t b[kN] = {};
+  uint8_t b[NUM_LANES] = {};
   vst2q_u8(b, va);
 
   assert_and_print(b);
@@ -54,14 +54,14 @@ void uint8x16x2_test() {
 // (Uint32, 4)
 void uint32x4_test() {
   std::cout << __func__ << std::endl;
-  constexpr std::size_t kN = 4;
+  constexpr std::size_t NUM_LANES = 4;
 
-  uint32_t a[kN] = {};
+  uint32_t a[NUM_LANES] = {};
   init(a);
 
   uint32x4_t va = vld1q_u32(a);
 
-  uint32_t b[kN] = {};
+  uint32_t b[NUM_LANES] = {};
   vst1q_u32(b, va);
 
   assert_and_print(b);
@@ -70,14 +70,14 @@ void uint32x4_test() {
 // (Uint32, 8)
 void uint32x4x2_test() {
   std::cout << __func__ << std::endl;
-  constexpr std::size_t kN = 8;
+  constexpr std::size_t NUM_LANES = 8;
 
-  uint32_t a[kN] = {};
+  uint32_t a[NUM_LANES] = {};
   init(a);
 
   uint32x4x2_t va = vld2q_u32(a);
 
-  uint32_t b[kN] = {};
+  uint32_t b[NUM_LANES] = {};
   vst2q_u32(b, va);
 
   assert_and_print(b);
