@@ -11,7 +11,7 @@ void init(T& a) {
 }
 
 template <typename T>
-void print_and_assert(const T& b) {
+void assert_and_print(const T& b) {
   for (int i = 0; i < sizeof(b) / sizeof(b[0]); ++i) {
     assert(b[i] == i);
     std::cout << "b[" << i << "] = " << (int)b[i] << std::endl;
@@ -32,7 +32,7 @@ void uint8x16_test() {
   uint8_t b[kN] = {};
   vst1q_u8(b, va);
 
-  print_and_assert(b);
+  assert_and_print(b);
 }
 
 // (Uint8, 32)
@@ -48,7 +48,7 @@ void uint8x16x2_test() {
   uint8_t b[kN] = {};
   vst2q_u8(b, va);
 
-  print_and_assert(b);
+  assert_and_print(b);
 }
 
 // (Uint32, 4)
@@ -64,7 +64,7 @@ void uint32x4_test() {
   uint32_t b[kN] = {};
   vst1q_u32(b, va);
 
-  print_and_assert(b);
+  assert_and_print(b);
 }
 
 // (Uint32, 8)
@@ -80,7 +80,7 @@ void uint32x4x2_test() {
   uint32_t b[kN] = {};
   vst2q_u32(b, va);
 
-  print_and_assert(b);
+  assert_and_print(b);
 }
 
 int main(int argc, char** argv) {
